@@ -1,0 +1,27 @@
+{% extends "common.html" %}
+
+{% block content %}
+    <div class="background-cover" id="loginForm">
+        
+        <div class="container row mx-auto">
+        <div class="col-10 mx-auto mt-4">
+            <h1 class="display-3 mt-5 text-center bg-light text-dark">Share Your Thought</h1>
+            <p class="my-2 animated infinite fadeIn text-light text-center" style="font-size: 4em"><i class="fas fa-arrow-down"></i></p>
+            <form class = "fadeInDown animated FormS" method="POST" enctype=multipart/form-data>
+                {{form.hidden_tag()}}
+                {% for field in form %}
+                    {% if field.type != 'CSRFTokenField' and field.type!='SubmitField' %}
+                        <div class="form-group">
+                           {{ field(class='form-control') }}
+                        </div>
+                        {% for error in field.errors %}
+                            <div class="invalid mt-0 mb-3"> {{ error }} </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+                {{ form.submit(class='form-control btn btn-light')}}
+            </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

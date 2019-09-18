@@ -1,0 +1,38 @@
+{% extends "common.html" %}
+{% block content %}
+<div class="background-cover text-center pt-4 about">
+    <div class="container">
+        <div class="row">
+            <div class="col-10 bg-light mx-auto">
+                <div class="container lead">
+                    <h1 class="display-4 p-3"><a class="Nlink" href="{{url_for('index')}}">iThinketh</a></h1>
+                    <p>It is a Platform for Posting Quotes and Downloading quotes in
+                        the form of Images..</p>
+                    <hr>
+                    <h3 class="display-5 mt-3 font-weight-bold">Feautures</h3>
+                    <span>User Friendly |</span>
+                    <span>Downloadable Quotes |</span>
+                    <span>Featured Quote</span>
+                    <hr>
+                    <h3 class="display-5 h3 mt-3 font-weight-bold">Technology</h3>
+                    <p>It uses the following Technologies :</p>
+                    <div class="container">
+                        <div class="row font-weight-bold">
+                            <span class="colorize col-6 col-lg-4 p-2">Python</span>
+                            <span class="colorize col-6 col-lg-4 p-2">Flask</span>
+                            <span class="colorize col-6 col-lg-4 p-2">HTML</span>
+                            <span class="colorize col-6 col-lg-4 p-2">CSS</span>
+                            <span class="colorize col-6 col-lg-4 p-2">JavaScript</span>
+                            <span class="colorize col-6 col-lg-4 p-2">JQuery</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <h3 class="display-5 mt-4 font-weight-bold">Developed By</h3>
+                    <h3 class="h1 colorize mt-2 font-weight-bold">Gagan Deep Singh</h3>
+                    <a class="btn btn-outline-dark" href = "mailto: gagangulyanig@gmail.com">Send Email</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

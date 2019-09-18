@@ -1,0 +1,32 @@
+{% extends "common.html" %}
+{% block content %}
+<div class="background-cover" id='signupForm'>
+    {{super()}}
+    <div class="container text-center">
+        <div class="pt-5 row">
+            <div class="col-12 col-sm-10 col-md-8 m-auto fadeInDown animated">
+            <br>
+            <br>
+            <br>
+                <p class="h4 mb-4" style="color:white;">Sign Up</p>
+                <form class="fadeInDown animated FormS" method="POST" autocomplete="on">
+                    {{form.hidden_tag()}}
+                    {% for field in form %}
+                    {% if field.type != 'CSRFTokenField' and field.type!='SubmitField' %}
+                    <div class="form-group">
+                        {{ field(class='form-control') }}
+                    </div>
+                    {% for error in field.errors %}
+                    <div class="invalid mt-0 mb-3"> {{ error }} </div>
+                    {% endfor %}
+                    {% endif %}
+                    {% endfor %}
+                    {{ form.submit(class='form-control btn btn-light')}}
+                    <p class="pt-3 text-light">Already Have An Account? Click <a href="{{ url_for('login') }}">Here</a> to Login.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,229 @@
+body{
+    font-family: 'Fira Sans', sans-serif;
+    margin:none;
+    padding: none;
+}
+
+.alert{
+    z-index: 5;
+    position: absolute;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 10em;
+    width: 50%;
+}
+
+.alert-light{
+    border-radius: 12em;
+    box-shadow: 1px 1px 5px black;
+}
+.brandname{
+    font-size: 1em;
+}
+
+.brandname:hover{
+    text-shadow: 0px 0px 1px black;
+}
+.alert, .alert-light{
+    margin-left: auto;
+    margin-right: auto;
+}
+.active{
+    font-weight: 600;
+}
+.h4, .mb-4{
+    text-shadow: 1px 2px 7px black;
+}
+
+#signupForm > div > div > div > form > p{
+    color: black!important;
+    text-shadow: 1px 2px 4px white;   
+}
+.FormS input, .FormS textarea{
+    box-shadow: 0px 0px 1px  1px rgba(0,0,0,0.5); 
+    border-radius: 2px;
+}
+.btn-light{
+    font-size: 1em;
+    background-color: white;
+    text-shadow: 1px 0px 5px white;
+    box-shadow: 0px 0px 3px black;
+    transition: 0.4s ease;
+}
+
+.btn-light:focus{
+    background-color: white;
+    box-shadow: 0px 0px 6px black;
+    text-shadow: none;
+}
+
+.btn-light:hover{
+    background-color: black;
+    border: 2px solid white;
+    color:white;
+    text-shadow: none;
+}
+.navbar, .navbar-expand-xl, .navbar-light, .bg-custom{
+    background-color: white;
+}
+
+.landing{
+    background-image: url('/static/images/landing6.jpg');
+}
+.landing, .background-cover{
+    min-height: 91vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.background-cover{
+    /*padding-top: 10%;*/
+    background-image: url('/static/images/landing3.jpg');
+}
+
+#signupForm{
+    /*padding-top: 7%;*/
+    background-image: url('/static/images/landing4.jpg');
+}
+.content{
+    display: flex;
+    padding-top: 25%;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.display-3 a{
+    color:white;
+    text-shadow: 0px 2px 10px black,
+                1px 4px 6px rgba(0,0,0,0.5);
+}
+
+.display-3 a:hover{
+    text-decoration: none; 
+}
+
+.display-3{
+    font-size: 6em;
+}
+
+
+@media screen and (max-width: 726px) {
+    .display-3{
+        font-size: 5.5em;
+    }
+}
+
+
+@media screen and (max-width: 682px) {
+    .display-3{
+        font-size: 4.5em;
+    }
+    .landing{
+        background-image: url('/static/images/landing7.jpg');
+    }
+}
+
+@media screen and (max-width: 544px) {
+    .display-3{
+        font-size: 4em;
+    }
+    .landing{
+        min-height: 60vh;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .display-3{
+        font-size: 3.5em;
+    }
+    .display-4{
+        font-size: 2.5em;
+    }
+    #postAPic{
+        font-size:0.7em;
+    }
+}
+
+@media screen and (max-width: 451) {
+    .display-3{
+        font-size: 3em;
+    }
+    .landing{
+        min-height: 40vh;
+        background-position: bottom;
+    }
+}
+
+@media screen and (max-width: 439px) {
+    .display-3{
+        font-size: 3em;
+    }
+    .landing{
+        min-height: 35vh;
+    }
+    .content{
+        padding-top: 7%;
+    }
+}
+
+.formS{
+    width: auto;
+    color: white;
+}
+
+
+.fa-quote-right, .fa-quote-left{
+    font-size: 2em;
+    color: white;
+}
+
+.img-quote{
+    width: 100%;
+    border-radius: 2em;
+    box-shadow: 1px 1px 4px black;
+}
+
+.quote-container .img-quote{
+    width: 70%;
+}
+
+.quote-item{
+    background-color: white;
+    box-shadow: 1px 1px 3px black;
+    transition: 0.5s ease;
+}
+
+.quote-item:hover{
+    box-shadow: 1px 4px 10px black;
+}
+
+#landingQ{
+    background-color: black;
+}
+#landingQ .Nlink{
+    color:white;
+}
+
+.Nlink{
+    color:black;
+}
+.Nlink:hover{
+    text-decoration: none;
+    color: black;
+}
+
+#uploads{
+    background-image: url('/static/images/1122.jpg')
+}
+
+#loginForm{
+    background-image: url('/static/images/landing5.jpg')
+}   
+
+.about{
+    background-image: url('/static/images/landing2.jpg')
+}

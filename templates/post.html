@@ -1,0 +1,51 @@
+{% extends "common.html" %}
+{% block title %}
+Quote by {{QuoteData.get('name')|title}} - {{super()}}
+{% endblock %}
+{% block content %}
+<div id='ImgPost' class="">
+    {{super()}}
+    <div class="row p-1 m-1 mt-5">
+        <div class="col-12 col-md-8 p-2 mx-auto">
+            <div class="mb-3">
+                <div class="quote-container text-center" onerror="$(this).remove()">
+                    <h4 class="font-weight-bold">Posted By <a class="colorize" href="/profile/{{QuoteData.get('username')}}">{{QuoteData.get('name')|title}}</a></h4>
+                    <div class="mb-2 mx-auto">
+                        <img class='img-quote' src="/quotes/images/{{QuoteData.get('quoteID')}}" alt="">
+                    </div>
+                    <p class="d-none" id='quote'>{{QuoteData.get('quote')}}</p>
+                    {% if QuoteData.get('userID') == current_usr.get('_id') %}
+                    <a class="btn btn-primary mb-2 d-inline-block" href="javascript:Edit({ele:'#quote', isQuote: true, fieldType: null})">Edit Quote</a>
+                    {% endif %}
+                    <a class='btn btn-success mb-2 d-inline-block' href='/quotes/images/download/{{QuoteData.get("quoteID")}}' )>Download <i class="fa fa-arrow-down text-light" aria-hidden="true"></i></a>
+                    {% if QuoteData.get('userID') == current_usr.get('_id') %}
+                    <a class="btn btn-danger mb-2 d-inline-block" href="javascript:Delete({isQuote: true})">Delete Quote</a>
+                    {% endif %}
+                </div>
+                <div class="description mx-5 text-center">
+                    <div class="post-description">
+                        <p class="mb-0">Posted on {{moment(QuoteData.get('created_at')).format("dddd, MMMM Do YYYY, h:mma")}}</p>
+                        <p class="mt-0" style='font-size:0.7em;'>({{moment(QuoteData.get('created_at')).fromNow()}})</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="description mx-5">
+                    <h5 class="font-weight-bold d-flex justify-content-center">Total Downloads</h5>
+                    <div class="post-description d-flex justify-content-center">
+                        <p class="mt-0 font-weight-bold" style=''>{{QuoteData.get('totalDownloads')|int}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+var QuoteID = '{{QuoteData.get("quoteID")}}';
+var username = null;
+var profileLink = '/profile/{{QuoteData.get('username')}}';
+var loggedIn = {{loggedIn}};
+</script>
+{{super()}}
+{% endblock %}

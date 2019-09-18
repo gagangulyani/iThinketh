@@ -1,0 +1,44 @@
+{% extends "common.html" %}
+{% block title %}
+{{super()}}
+{% endblock %}
+{% block content %}
+<div class="landing">
+    {{super()}}
+    <div class="content flipInX animated">
+        <h1 class="display-3 mt-4 mb-0 text-center"><a href="javascript:ClickToGoTo('{{url_for('index')}}');">iThinketh</a></h1>
+        <p class="text-center mt-0" style="text-shadow: 1px 1px 1px black; color: white">for a generation who likes to express</p>
+        <div class="input-group col-md-12 d-flex justify-content-center">
+            <input id='postAPic' type="button" class="btn-light btn" value="Post a Quote" onclick='ClickToGoTo("/submit/quote")'>
+        </div>
+    </div>
+</div>
+<div class="div-section container">
+    {% for quote in first %}
+    <h1 class="display-4 mt-2 colorize bg-white text-center my-3">Quote of the Day!</h1>
+    <a href="/quotes/{{quote.get('quoteID')}}" class="d-flex flex-column">
+        <img class="img-quote" src="/quotes/images/{{quote.get('quoteID')}}" alt="Quote of The Day">
+    </a>
+    {% endfor %}
+    <hr>
+    {% if quotes|length != 0 %}
+    <h1 display-5 mt-2 colorize text-center>Popular Quotes</h1>
+    <div class="quote-container mb-4">
+        <div class="row">
+            {% for quote in quotes %}
+            <div class="col-12 col-lg-5 mx-auto quote-item py-2 mt-5" id='landingQ'>
+                <a class="blockquote Nlink text-center" href="/quotes/{{quote.get('quoteID')}}">
+                    <i class="fa fa-quote-left" aria-hidden="true"></i>
+                    <p class="mb-0">{{quote.get('quote')}}</p>
+                    <footer class="blockquote-footer colorize"><cite title="By {{quote.get('name')|title}}">{{quote.get('name')|title}}</cite></footer>
+                    <i class="fa fa-quote-right d-flex justify-content-end" aria-hidden="true"></i>
+                </a>
+            </div>
+            {% endfor %}
+            {% else %}
+            <h1 display-5 mt-2 colorize>Quotes Currently Unavailable</h1>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
