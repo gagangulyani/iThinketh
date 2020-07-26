@@ -16,7 +16,9 @@ import os
 import os.path
 import random
 
-savePath = "static/Images/GeneratedQuotes"
+savePath = "static/images/GeneratedQuotes"
+if not os.path.exists(savePath):
+    os.mkdir(savePath)
 
 def GenImage(quote, author, quoteID, update_ = False):
     path = 'models'
