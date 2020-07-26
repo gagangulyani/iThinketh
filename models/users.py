@@ -1,7 +1,7 @@
 from models.database import Database
 from models.quotes import Quote
 from models.encryption_ import Encrypt, Decrypt
-from werkzeug import generate_password_hash, check_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 
 
