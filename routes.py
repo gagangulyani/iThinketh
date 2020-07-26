@@ -44,7 +44,6 @@ app.jinja_env.globals.update(getCUserData=getCUserData)
 def index():
     quotes = Quote.GetAllQuotes()
     try:
-        quotes = [i for i in quotes]
         first = [quotes[random.randint(0, len(quotes)-1)]]
         print(first)
     except:

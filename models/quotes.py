@@ -52,9 +52,9 @@ class Quote(object):
 
     @staticmethod
     def GetAllQuotes(query={}, skip_=0, limit_=0, sortField=None):
-        return Database.find_all(
+        return list(Database.find_all(
             collection=Quote.COLLECTION,
-            query=query, skip_=skip_, limit_=limit_, sortField=sortField)
+            query=query, skip_=skip_, limit_=limit_, sortField=sortField))
 
     @staticmethod
     def GetQuotesByUserID(userID):
