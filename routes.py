@@ -93,7 +93,7 @@ def downloadQuote(quoteID):
                 GenImage(quote, author, q.get('quoteID')),
                 mimetype='image/jpeg',
                 as_attachment=True,
-                attachment_filename=f"{q.get('name').title()}\'s Quote - \
+                download_name=f"{q.get('name').title()}\'s Quote - \
 iThinketh.jpeg")
 
 

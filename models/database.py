@@ -12,7 +12,7 @@ class Database(object):
 
     @staticmethod
     def insert(collection, data):
-        Database.DATABASE[collection].insert(data)
+        Database.DATABASE[collection].insert_one(data)
 
     @staticmethod
     def find(collection, query, sortField=None):
@@ -75,13 +75,13 @@ class Database(object):
 
     @staticmethod
     def update(collection, query, update_query): 
-        return Database.DATABASE[collection].update(query,
+        return Database.DATABASE[collection].update_one(query,
                                                     {"$set": update_query})
 
     @staticmethod
     def updateMany(collection, query, update_query):
         if update_query.get('$inc'):
-            return Database.DATABASE[collection].update(query, update_query)   
+            return Database.DATABASE[collection].update_many(query, update_query)   
 
         return Database.DATABASE[collection].update_many(query,
                                                          {"$set": update_query})
